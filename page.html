@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin:0;padding:0;}
+        .WW_page{
+            display:inline-block;
+        }
+        .WW_page:after,.WW_page:before{
+            display:block;
+            content:"";
+            height:0;
+            visibility:hidden;
+        }
+        .WW_page:after{clear:both;}
+        .WW_onePage,.WW_current{
+            display:block;
+            float:left;
+            vertical-align:middle;
+            padding:5px 15px;
+            border:1px solid #999;
+            margin:0 2px;
+            color:#fff;
+            cursor:pointer;
+            border-radius:2px;
+            -webkit-border-radius:2px;
+            user-select:none;
+        }
+        .WW_onePage{
+            background:#fff;
+            border:1px solid #ccc;
+            color:#666;
+        }
+        .WW_current{
+            background:#ff4b69;
+            border:1px solid #ff4b69;
+            color:#fff;
+        }
+        .WW_disabled{
+            background:#c7c7c7;
+            color:#fff;
+            border:1px solid #c7c7c7;
+        }
+
+        .box,.text{
+            padding:20px 40px;
+            min-width:1200px;
+            text-align:center;
+        }
+        .text{
+            font-size:18px;
+            color:#000;
+        }
+    </style>
+</head>
+<body>
+<!--分页容器-->
+<div id="box" class="box"></div>
+<div id="text" class="text"></div>
+<script src="page.js"></script>
+<script>
+    window.onload = function(){
+        var _page = new Page('box',1,20);  // box--分页容器id  1--初始化被选中页码 100--总页码
+        _page.onChange = function(now,all){
+            // now--被选中页码 all--总页码
+           this.getElement('#text').innerHTML = '当前页码'+now+'，总页码'+all+'';
+        }
+    };
+</script>
+</body>
+</html>
