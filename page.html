@@ -62,7 +62,7 @@
 <script src="page.js"></script>
 <script>
     window.onload = function(){
-        var _page = new Page('box',1,20);  // box--分页容器id  1--初始化被选中页码 100--总页码
+        var _page = new Page('box',2,100);  // box--分页容器id  1--初始化被选中页码 100--总页码
         _page.onChange = function(now,all){
             // now--被选中页码 all--总页码
            this.getElement('#text').innerHTML = '当前页码'+now+'，总页码'+all+'';
