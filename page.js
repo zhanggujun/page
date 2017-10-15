@@ -42,7 +42,7 @@
             //开始页码
             var start = 2;
             var end = (all<9)?all:9;
-            //是否显示前置省略号,即大于10的开始页码
+            //是否显示前置省略号,即大于10的开始页码.
             if(now>=7){
                 html += '<a class="WW_onePage">···</a>';
                 start = now-4;
